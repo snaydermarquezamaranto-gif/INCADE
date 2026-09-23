@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>INCADE | Instituto Nacional de Capacitación y Desarrollo Profesional</title>
+<meta name="description" content="INCADE ofrece contabilidad, impuestos, auditoría, nómina y asesoría financiera para empresas y profesionales independientes.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f5f7fb;--surface:#ffffff;--text:#101c33;--muted:#56657f;--border:#dfe6f0;
+  --navy:#08152b;--navy2:#0f2a52;--accent:#f5a524;--accent-ink:#1b1300;--link:#0b5aa5;
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--bg:#0a1220;--surface:#111d33;--text:#e9effb;--muted:#9db0cf;--border:#22324f;--link:#7fb6f2}
+}
+:root[data-theme="dark"]{--bg:#0a1220;--surface:#111d33;--text:#e9effb;--muted:#9db0cf;--border:#22324f;--link:#7fb6f2}
+html{scroll-behavior:smooth;scroll-padding-top:calc(72px + env(safe-area-inset-top,0px))}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:'Manrope',system-ui,-apple-system,'Segoe UI',Arial,sans-serif;line-height:1.65;font-size:17px}
+a{color:inherit}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--navy);border-bottom:1px solid rgba(255,255,255,.08)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:68px;gap:16px}
+.brand{font-weight:800;font-size:22px;letter-spacing:.06em;color:#fff;text-decoration:none}
+.links{display:flex;align-items:center;gap:26px}
+.links a{color:#c6d3ea;text-decoration:none;font-size:15px;font-weight:500}
+.links a:hover{color:#fff}
+.btn{display:inline-block;background:var(--accent);color:var(--accent-ink)!important;font-weight:700;text-decoration:none;padding:12px 22px;border-radius:8px;border:0;font:inherit;font-weight:700;cursor:pointer}
+.btn:hover{filter:brightness(1.07)}
+.btn.sm{padding:9px 16px;font-size:15px}
+.btn.ghost{background:transparent;color:#fff!important;border:1.5px solid rgba(255,255,255,.35)}
+@media(max-width:820px){.links a:not(.btn){display:none}}
+
+.hero{background:
+  linear-gradient(115deg,rgba(8,21,43,.97) 35%,rgba(15,42,82,.85)),
+  repeating-linear-gradient(0deg,transparent 0 47px,rgba(255,255,255,.05) 47px 48px),
+  repeating-linear-gradient(90deg,transparent 0 47px,rgba(255,255,255,.05) 47px 48px),var(--navy);
+  color:#fff;padding:96px 0 104px}
+.hero .kicker{color:var(--accent);font-weight:600;font-size:15px;margin:0 0 18px}
+.hero h1{font-size:clamp(34px,5.4vw,60px);line-height:1.08;margin:0 0 24px;max-width:17em;font-weight:800;letter-spacing:-.02em}
+.hero p.lead{max-width:40em;color:#c6d3ea;font-size:18px;margin:0 0 34px}
+.cta{display:flex;flex-wrap:wrap;gap:14px}
+
+section{padding:84px 0}
+h2{font-size:clamp(28px,3.6vw,40px);line-height:1.15;margin:0 0 14px;letter-spacing:-.015em;font-weight:800}
+.sub{color:var(--muted);max-width:44em;margin:0 0 42px}
+.grid{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(290px,1fr))}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:28px}
+.card h3{margin:0 0 8px;font-size:19px;line-height:1.3}
+.card p{margin:0;color:var(--muted);font-size:16px}
+.card.serv{border-top:4px solid var(--accent)}
+
+#nosotros{background:var(--surface);border-block:1px solid var(--border)}
+.split{display:grid;gap:48px;grid-template-columns:1.2fr 1fr;align-items:start}
+@media(max-width:820px){.split{grid-template-columns:1fr}}
+.split p{color:var(--muted)}
+ul.checks{list-style:none;padding:0;margin:24px 0 0}
+ul.checks li{padding:8px 0 8px 30px;position:relative;font-weight:600}
+ul.checks li::before{content:"";position:absolute;left:0;top:15px;width:14px;height:8px;border-left:3px solid var(--accent);border-bottom:3px solid var(--accent);transform:rotate(-45deg)}
+.cap{background:var(--navy);color:#fff;border-radius:14px;padding:34px}
+.cap h3{margin:0 0 10px;font-size:22px}
+.cap p{color:#c6d3ea;margin:0 0 22px}
+
+.contact{display:grid;gap:40px;grid-template-columns:1fr 1.2fr}
+@media(max-width:820px){.contact{grid-template-columns:1fr}}
+.info dt{font-weight:700;margin-top:20px}
+.info dd{margin:2px 0 0;color:var(--muted)}
+.info a{color:var(--link)}
+form{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:28px;display:grid;gap:16px}
+label{display:grid;gap:6px;font-weight:600;font-size:15px}
+input,select,textarea{font:inherit;font-weight:400;padding:12px 14px;border-radius:8px;border:1px solid var(--border);background:var(--bg);color:var(--text);width:100%}
+textarea{min-height:110px;resize:vertical}
+.note{font-size:14px;color:var(--muted);margin:0}
+footer{background:var(--navy);color:#c6d3ea;padding:36px 0;text-align:center;font-size:15px}
+footer strong{color:#fff;letter-spacing:.06em;font-size:18px;display:block}
+footer p{margin:6px 0 0}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#inicio">INCADE</a>
+    <nav class="links" aria-label="Principal">
+      <a href="#servicios">Servicios</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#por-que-incade">Por qué INCADE</a>
+      <a href="#contacto">Contacto</a>
+      <a class="btn sm" href="#contacto">Solicitar consulta</a>
+    </nav>
+  </div>
+</header>
+
+<main id="inicio">
+  <div class="hero">
+    <div class="wrap">
+      <p class="kicker">Instituto Nacional de Capacitación y Desarrollo Profesional</p>
+      <h1>Contabilidad clara y confiable para que tu negocio crezca sin sobresaltos</h1>
+      <p class="lead">Brindamos soluciones integrales en contabilidad, tributación y asesoría empresarial, acompañando a nuestros clientes con profesionalismo, confianza y atención personalizada. Nos enfocamos en comprender las necesidades de cada negocio para ofrecer información clara, soluciones oportunas y una gestión eficiente que contribuya a su crecimiento y desarrollo.</p>
+      <div class="cta">
+        <a class="btn" href="#contacto">Agenda una consulta gratuita</a>
+        <a class="btn ghost" href="#servicios">Ver servicios</a>
+      </div>
+    </div>
+  </div>
+
+  <section id="servicios">
+    <div class="wrap">
+      <h2>Nuestros servicios</h2>
+      <p class="sub">Soluciones contables y financieras diseñadas para empresas, comercios y profesionales independientes que necesitan orden, cumplimiento y buenas decisiones.</p>
+      <div class="grid">
+        <article class="card serv"><h3>Contabilidad general</h3><p>Registro contable, conciliaciones y estados financieros claros para que sepas exactamente cómo va tu negocio.</p></article>
+        <article class="card serv"><h3>Impuestos y cumplimiento fiscal</h3><p>Cálculo y presentación de declaraciones, planeación fiscal y acompañamiento frente a cualquier requerimiento de la autoridad.</p></article>
+        <article class="card serv"><h3>Auditoría y revisión financiera</h3><p>Revisiones independientes que detectan riesgos a tiempo y dan certeza a socios, inversionistas y autoridades.</p></article>
+        <article class="card serv"><h3>Nómina y gestión de personal</h3><p>Cálculo de nómina, prestaciones y obligaciones patronales administradas con precisión mes a mes.</p></article>
+        <article class="card serv"><h3>Asesoría financiera y consultoría</h3><p>Análisis financiero y recomendaciones prácticas para mejorar la rentabilidad y tomar mejores decisiones.</p></article>
+        <article class="card serv"><h3>Constitución de empresas</h3><p>Te acompañamos desde la constitución legal de tu empresa hasta su alta ante las autoridades fiscales.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="nosotros">
+    <div class="wrap split">
+      <div>
+        <h2>INCADE</h2>
+        <p>Nace con la misión de democratizar el conocimiento financiero y contable. No solo nos dedicamos a la asesoría, sino a capacitar y acompañar a las empresas con un lenguaje directo y sin complicaciones.</p>
+        <p>Gracias a nuestro equipo en constante actualización normativa, convertimos la complejidad tributaria en herramientas accesibles para que tomes el control y las mejores decisiones en tu empresa.</p>
+        <ul class="checks">
+          <li>Atención personalizada para empresas y profesionales independientes</li>
+          <li>Comunicación clara, sin jerga innecesaria</li>
+          <li>Cumplimiento puntual de tus obligaciones fiscales</li>
+        </ul>
+      </div>
+      <div class="cap">
+        <h3>Capacitación profesional</h3>
+        <p>Además de llevar tu contabilidad, INCADE ofrece programas de capacitación y desarrollo profesional para equipos administrativos y financieros que quieren fortalecer sus conocimientos contables y fiscales.</p>
+        <a class="btn" href="#contacto">Pide información</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="por-que-incade">
+    <div class="wrap">
+      <h2>¿Por qué elegir INCADE?</h2>
+      <div class="grid" style="margin-top:34px">
+        <article class="card"><h3>Precisión y cumplimiento</h3><p>Cada cifra se revisa con rigor para que tu contabilidad esté siempre en orden.</p></article>
+        <article class="card"><h3>Confidencialidad total</h3><p>La información financiera de tu negocio se maneja con el máximo cuidado y discreción.</p></article>
+        <article class="card"><h3>Equipo en formación continua</h3><p>Como instituto de capacitación, mantenemos a nuestro equipo actualizado en normativa y mejores prácticas.</p></article>
+        <article class="card"><h3>Visión integral de negocio</h3><p>No solo llevamos tu contabilidad: te ayudamos a entenderla y a usarla para crecer.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="contacto" style="background:var(--surface);border-top:1px solid var(--border)">
+    <div class="wrap">
+      <h2>Hablemos de tu negocio</h2>
+      <p class="sub">Escríbenos y con gusto te contactamos para conocer tus necesidades contables o de capacitación y proponerte la mejor solución.</p>
+      <div class="contact">
+        <dl class="info" style="margin:0">
+          <dt>Celular</dt><dd><a href="tel:+51936971496">+51 936 971 496</a></dd>
+          <dt>Correo</dt><dd><a href="mailto:contabilidadtrujillo@hotmail.com">contabilidadtrujillo@hotmail.com</a></dd>
+          <dt>Ubicación</dt><dd>Urb. Covidunt, Trujillo</dd>
+        </dl>
+        <form id="f">
+          <label>Nombre completo<input id="n" required autocomplete="name"></label>
+          <label>Correo electrónico<input id="e" type="email" required autocomplete="email"></label>
+          <label>Celular (opcional)<input id="t" type="tel" autocomplete="tel"></label>
+          <label>Servicio de interés
+            <select id="s">
+              <option>Contabilidad general</option><option>Impuestos y cumplimiento fiscal</option><option>Auditoría y revisión financiera</option><option>Nómina y gestión de personal</option><option>Asesoría financiera y consultoría</option><option>Constitución de empresas</option><option>Capacitación profesional</option><option>Otro</option>
+            </select>
+          </label>
+          <label>Cuéntanos en qué podemos ayudarte<textarea id="m"></textarea></label>
+          <button class="btn" type="submit">Enviar mensaje por WhatsApp</button>
+          <p class="note">Se abrirá WhatsApp con tu mensaje listo para enviar.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <strong>INCADE</strong>
+    <p>Instituto Nacional de Capacitación y Desarrollo Profesional</p>
+    <p>© 2026 INCADE. Todos los derechos reservados.</p>
+  </div>
+</footer>
+
+<script>
+document.getElementById('f').addEventListener('submit',function(ev){
+  ev.preventDefault();
+  var v=function(id){return document.getElementById(id).value.trim()};
+  var txt='Hola INCADE, soy '+v('n')+'.\nServicio de interés: '+v('s')+'.\nCorreo: '+v('e')+(v('t')?'\nCelular: '+v('t'):'')+(v('m')?'\n\n'+v('m'):'');
+  window.open('https://wa.me/51936971496?text='+encodeURIComponent(txt),'_blank','noopener');
+});
+</script>
+</body>
+</html>
